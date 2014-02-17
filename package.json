@@ -1,6 +1,6 @@
 {
   "name": "nodeunit-tape",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Just enough tape to run nodeunit tests in the browser",
   "main": "nodeunit-tape.js",
   "scripts": {
