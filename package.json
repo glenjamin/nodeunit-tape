@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "description": "Just enough tape to run nodeunit tests in the browser",
   "main": "nodeunit-tape.js",
-  "scripts": {
-    "test": "node ./run-tests.js",
-    "tap": "nodeunit tests.js --reporter tap",
-    "testling": "browserify -i 'node_modules/nodeunit/node_modules/tap/**' ./run-tests.js | testling"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/glenjamin/nodeunit-tape.git"
@@ -25,10 +20,29 @@
   "homepage": "https://github.com/glenjamin/nodeunit-tape",
   "peerDependencies": {
     "tape": "~2.4.2",
-    "nodeunit": "~0.8.5"
+    "nodeunit": "~0.8.6"
   },
   "devDependencies": {
     "tape": "~2.4.2",
-    "nodeunit": "~0.8.5"
+    "nodeunit": "~0.8.6"
+  },
+  "scripts": {
+    "test": "node ./run-tests.js",
+    "tap": "nodeunit tests.js --reporter tap",
+    "testling": "browserify ./run-tests.js | testling",
+    "build": "browserify ./run-tests.js > test-bundle.js"
+  },
+  "testling": {
+    "files": "run-tests.js",
+    "browsers": [
+      "ie/9..latest",
+      "chrome/latest",
+      "firefox/latest",
+      "safari/latest",
+      "opera/latest",
+      "iphone/latest",
+      "ipad/latest",
+      "android-browser/latest"
+    ]
   }
 }
